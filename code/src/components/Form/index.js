@@ -25,11 +25,13 @@ render() {
   return (
     <div>
       <form onSubmit={this.handleSubmit}>
+        <button>+</button>
         <input
           type="text"
-          value={this.state.text}
-          onChange={this.handleNewGoal} />
-        <button>add</button>
+          placeholder="Add goal..."
+          // value={this.state.text}
+          // onChange={this.handleNewGoal}
+        />
       </form>
     </div>
   )

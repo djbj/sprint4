@@ -14,7 +14,6 @@ class App extends React.Component {
       <div>
         <Header />
         <Form />
-        Find me in src/app.js!å
       </div>
     )
   }
