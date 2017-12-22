@@ -23,7 +23,7 @@ handleSubmit = (event) => {
 
 render() {
   return (
-    <div>
+    <div className="container-form">
       <form onSubmit={this.handleSubmit}>
         <button>+</button>
         <input
@@ -31,7 +31,7 @@ render() {
           placeholder="Add goal..."
           // value={this.state.text}
           // onChange={this.handleNewGoal}
-        />
+          />
       </form>
     </div>
   )
