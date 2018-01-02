@@ -6,18 +6,20 @@ class Goal extends React.Component {
 
   handleCheckboxChange = () => {
     this.props.onChange(this.props.id)
+    console.log("HandleClick")
   }
 
   render() {
     return (
       <div className="goals">
-        <label>
-          <input
-            type="checkbox"
+          <div
             onChange={this.handleCheckboxChange}
-            checked={this.props.done} />
+            checked={this.props.done}
+            onClick={this.handleCheckboxChange}>
+              Click
+            </div>
           {this.props.text}
-        </label>
+
       </div>
     )
   }
