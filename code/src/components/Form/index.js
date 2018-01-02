@@ -10,7 +10,7 @@ class Form extends React.Component {
     }
   }
 
-handleNewGoal = event => {
+handleChange = event => {
   this.setState({
     text: event.target.value
   })
@@ -18,6 +18,7 @@ handleNewGoal = event => {
 
 handleSubmit = event => {
   event.preventDefault()
+  this.props.onNewGoal(this.state.text)
   this.setState({
     text: ""
   })
@@ -33,7 +34,7 @@ render() {
           name="text"
           placeholder="Add goal..."
           value={this.state.text}
-          onChange={this.handleNewGoal} />
+          onChange={this.handleChange} />
       </form>
     </div>
   )
