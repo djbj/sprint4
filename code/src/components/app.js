@@ -5,7 +5,7 @@ import dateArray from "moment-array-dates"
 import Form from "./Form"
 // import Goal from "Goal"
 import Header from "./Header"
-// import Page from "Page"
+// import Todo-list from "./Todo-list"
 
 class App extends React.Component {
 
@@ -14,6 +14,7 @@ class App extends React.Component {
       <div>
         <Header />
         <Form />
+        {/* <Todo-list /> */}
       </div>
     )
   }
