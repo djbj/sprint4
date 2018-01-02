@@ -18,7 +18,9 @@ handleNewGoal = event => {
 
 handleSubmit = event => {
   event.preventDefault()
-  this.setState({ text: "" })
+  this.setState({
+    text: ""
+  })
 }
 
 render() {
@@ -28,10 +30,10 @@ render() {
         <button>+</button>
         <input
           type="text"
+          name="text"
           placeholder="Add goal..."
           value={this.state.text}
-          onChange={this.handleNewGoal}
-        />
+          onChange={this.handleNewGoal} />
       </form>
     </div>
   )

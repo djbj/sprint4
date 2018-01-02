@@ -1,6 +1,6 @@
 import React from "react"
 import moment from "moment"
-import dateArray from "moment-array-dates"
+// import dateArray from "moment-array-dates"
 
 import "./style.css"
 
