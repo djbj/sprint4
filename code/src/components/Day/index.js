@@ -8,8 +8,7 @@ class Day extends React.Component {
         className="dayButton"
         // onChange={this.handleCheckboxChange}
         // checked={this.props.done}
-        onClick={this.props.handleDayClick
-          console.log("click")}/>
+        onClick={this.props.handleDayClick} />
 
         // onClick={() => this.handleClick(i)}
     )
