@@ -8,16 +8,16 @@ class TodoList extends React.Component {
     super(props)
     this.state = {
       goals: [
-        { id: 1, text: "Yoga", done: false },
-        { id: 2, text: "Jogging", done: true },
-        { id: 3, text: "Feeding the cat", done: true }
+        { id: 1, text: "Yoga", status: [0,0,0,0,0,0,0] },
+        { id: 2, text: "Jogging", status: [1,2,0,0,1,2,0] },
+        { id: 3, text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
       ]
     }
   }
 
   handleNewGoal = newGoalText => {
     if(newGoalText === "") {return}
-    const goal = { id: 9, text: newGoalText, done: false }
+    const goal = { id: 9, text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0] }
     this.setState({
       goals: [goal, ...this.state.goals]
     })
@@ -46,7 +46,7 @@ class TodoList extends React.Component {
             id={item.id}
             onChange={this.handleTodoDoneChange}
             text={item.text}
-            done={item.done} />
+            status={item.status} />
         ))}
       </div>
     )

@@ -1,5 +1,5 @@
 import React from "react"
-
+import Day from "../Day"
 import "./style.css"
 
 class Goal extends React.Component {
@@ -9,17 +9,23 @@ class Goal extends React.Component {
     console.log("HandleClick")
   }
 
+handleDayClick = () => {
+  console.log("DayClick")
+}
   render() {
     return (
       <div className="goals">
-          <div
-            onChange={this.handleCheckboxChange}
-            checked={this.props.done}
-            onClick={this.handleCheckboxChange}>
-              Click
-            </div>
+          {/* onChange={this.handleCheckboxChange} */}
+          {/* checked={this.props.done} */}
+          {/* onClick={this.handleCheckboxChange}> */}
           {this.props.text}
 
+          {this.props.status.map(item => (
+
+            <Day
+              key={item.id}
+              onClick={() => this.handleDayClick()}/>
+          ))}
       </div>
     )
   }
