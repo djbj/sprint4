@@ -53,4 +53,12 @@ button {
     border: 0.4vw solid black;
   }
 
+  .dayButton1 {
+    background-size: 4vw 4vw;
+  }
+
+  .dayButton2 {
+    background-size: 5.2vw 5.2vw;
+  }
+
 }
