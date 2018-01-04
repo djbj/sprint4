@@ -40,6 +40,10 @@ button {
   cursor: pointer;
 }
 
+.dayButton0:hover, .dayButton1:hover, .dayButton2:hover  {
+  box-shadow: 4px -4px black;
+}
+
 @media (max-width: 600px) {
 
   .dayButton0, .dayButton1, .dayButton2 {
