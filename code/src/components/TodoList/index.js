@@ -32,6 +32,10 @@ class TodoList extends React.Component {
     })
   }
 
+  handleDayClick = (dayState, goalId, index) => {
+    console.log(dayState, goalId, index)
+  }
+
   render() {
     return (
       <div>
@@ -41,7 +45,10 @@ class TodoList extends React.Component {
             key={item.id}
             id={item.id}
             text={item.text}
-            status={item.status} />
+            status={item.status}
+            // onButtonPress2={() => this.handleDayClick()}
+            onButtonPress2={this.handleDayClick}
+/>
         ))}
       </div>
     )
