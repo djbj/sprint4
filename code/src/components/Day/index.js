@@ -2,8 +2,8 @@ import React from "react"
 import "./style.css"
 
 class Day extends React.Component {
-  getClassName = (day) => {
-    if(day === 0) {
+  getClassName = day => {
+    if (day === 0) {
       return "dayButton0"
     } else if (day === 1) {
       return "dayButton1"
@@ -16,8 +16,7 @@ class Day extends React.Component {
     return (
       <button
         className={this.getClassName(this.props.dayStatus)}
-        onClick={this.props.onClick}
-      />
+        onClick={this.props.onClick} />
     )
   }
 }
