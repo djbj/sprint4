@@ -15,7 +15,8 @@ import "./style.css"
 class Goal extends React.Component {
 
 handleDayClick = (dayIndex, dayStatus) => {
-  console.log("dayClick", this.props.text, this.props.status, dayIndex, dayStatus)
+  // console.log("dayClick", this.props.text, this.props.status, dayIndex, dayStatus)
+  console.log("I need to update state")
 }
 
 render() {

@@ -9,9 +9,9 @@ class TodoList extends React.Component {
     super(props)
     this.state = {
       goals: [
-        { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
-        { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
-        { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
+        // { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
+        // { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
+        // { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
       ]
     }
 
