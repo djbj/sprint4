@@ -18,6 +18,7 @@ render() {
         <div className="day"><p>F</p></div>
         <div className="day"><p>S</p></div>
         <div className="day"><p>S</p></div>
+        {/* <div className="del"><p>D</p></div> */}
       </div>
 
       {this.props.status.map((item, index) => (
@@ -30,6 +31,7 @@ render() {
           />
         </div>
       ))}
+      {/* <button>DEL</button> */}
     </div>
 
   )

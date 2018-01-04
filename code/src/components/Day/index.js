@@ -9,6 +9,8 @@ class Day extends React.Component {
       return "dayButton1"
     } else if (day === 2) {
       return "dayButton2"
+    } else if (day === 3) {
+      return "delete"
     }
   }
 
