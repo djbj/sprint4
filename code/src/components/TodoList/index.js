@@ -14,13 +14,21 @@ class TodoList extends React.Component {
         { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
       ]
     }
+
+    // getting data from the local storage
+    const alldata = JSON.parse(localStorage.getItem("dataItem"))
+    if (alldata) { this.state = { goals: alldata } }
   }
 
   handleNewGoal = newGoalText => {
     if (newGoalText === "") { return }
     const goal = { id: uuid(), text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0] }
+
+    // saving data in a local storage
+    const data = [goal, ...this.state.goals]
+    localStorage.setItem("dataItem", JSON.stringify(data))
     this.setState({
-      goals: [goal, ...this.state.goals]
+      goals: data
     })
   }
 
