@@ -16,7 +16,6 @@ class Goal extends React.Component {
 
 handleDayClick = (dayIndex) => {
   console.log("dayClick", this.props.text, this.props.status, dayIndex)
-  console.log(this.props.status)
 }
 
 render() {
