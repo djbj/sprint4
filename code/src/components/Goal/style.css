@@ -20,6 +20,10 @@
   text-align: left;
 }
 
+.container-days-mobile {
+  display: none;
+}
+
 @media (max-width: 600px) {
 
 .goals {
@@ -28,6 +32,12 @@
   margin-top: 2vw;
   height: 18vw;
   display: flex;
+  justify-content: space-between;
+}
+
+.container-days-mobile {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 

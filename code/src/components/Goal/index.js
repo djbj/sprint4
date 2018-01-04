@@ -15,6 +15,16 @@ render() {
     <div className="goals">
       <div className="goal-text">{this.props.text}</div>
 
+      <div className="container-days-mobile">
+        <div className="day"><p>M</p></div>
+        <div className="day"><p>T</p></div>
+        <div className="day"><p>W</p></div>
+        <div className="day"><p>T</p></div>
+        <div className="day"><p>F</p></div>
+        <div className="day"><p>S</p></div>
+        <div className="day"><p>S</p></div>
+      </div>
+
       {this.props.status.map((item, index) => (
         <div className="day-buttons">
           <Day
