@@ -6,11 +6,7 @@ class Day extends React.Component {
     return (
       <button
         className="dayButton"
-        // onChange={this.handleCheckboxChange}
-        // checked={this.props.done}
-        onClick={this.props.handleDayClick} />
-
-        // onClick={() => this.handleClick(i)}
+        onClick={this.props.onClick} />
     )
   }
 }

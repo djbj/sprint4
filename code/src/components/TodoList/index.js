@@ -1,4 +1,5 @@
 import React from "react"
+import uuid from "uuid/v4"
 import Form from "../Form"
 import Goal from "../Goal"
 
@@ -8,16 +9,16 @@ class TodoList extends React.Component {
     super(props)
     this.state = {
       goals: [
-        { id: 1, text: "Yoga", status: [0,0,0,0,0,0,0] },
-        { id: 2, text: "Jogging", status: [1,2,0,0,1,2,0] },
-        { id: 3, text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
+        { id: uuid(), text: "Yoga", status: [0 ,0,0,0,0,0,0] },
+        { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
+        { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
       ]
     }
   }
 
   handleNewGoal = newGoalText => {
-    if(newGoalText === "") {return}
-    const goal = { id: 9, text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0] }
+    if (newGoalText === "") { return }
+    const goal = { id: uuid(), text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0] }
     this.setState({
       goals: [goal, ...this.state.goals]
     })
@@ -26,7 +27,7 @@ class TodoList extends React.Component {
   handleTodoDoneChange = id => {
     const newGoals = this.state.goals.map(item => {
       if (item.id === id) {
-        item.done = !item.done
+        // item.done = !item.done
       }
       return item
     })
@@ -44,7 +45,6 @@ class TodoList extends React.Component {
           <Goal
             key={item.id}
             id={item.id}
-            onChange={this.handleTodoDoneChange}
             text={item.text}
             status={item.status} />
         ))}

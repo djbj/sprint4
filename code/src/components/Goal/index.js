@@ -1,35 +1,40 @@
 import React from "react"
+import uuid from "uuid/v4"
 import Day from "../Day"
 import "./style.css"
 
+// function Day(props) {
+//   return (
+//     <button
+//       className="dayButton"
+//       onClick={props.onClick}>
+//       {props.key}
+//     </button>
+//   )
+// }
 class Goal extends React.Component {
 
-  handleCheckboxChange = () => {
-    this.props.onChange(this.props.id)
-    console.log("HandleClick")
-  }
-
 handleDayClick = () => {
-  console.log("DayClick")
+  console.log("dayClick", this.props.text, this.props.status, this.props.dayIndex)
+  console.log(this.props.status)
 }
-  render() {
-    return (
-      <div className="goals">
-          {/* onChange={this.handleCheckboxChange} */}
-          {/* checked={this.props.done} */}
-          {/* onClick={this.handleCheckboxChange}> */}
-          {this.props.text}
 
-          {this.props.status.map(item => (
+render() {
+  return (
+    <div className="goals">
+      <div className="goal-text">{this.props.text}</div>
 
-            <Day
-              key={item.id}
-              onClick={() => this.handleDayClick()}/>
-          ))}
-      </div>
-    )
-  }
-
+      {this.props.status.map(item => (
+        <div className="day-buttons">
+          <Day
+            key={uuid()}
+            dayIndex={item.index}
+            onClick={() => this.handleDayClick()} />
+        </div>
+      ))}
+    </div>
+  )
+}
 }
 
 export default Goal

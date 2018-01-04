@@ -1,9 +1,31 @@
 body {
 }
 
+.container-form-days {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
 .container-form {
-  width: 25vw;
-  height: 10vw;
+  width: 15vw;
+  height: 5vw;
+  margin-top: 5vw;
+  display: inline-block;
+}
+
+.container-days {
+  display: flex;
+  flex-direction: row;
+}
+
+.day {
+  margin-left: 1.5vw;
+  width: 6vw;
+  height: auto;
+  text-align: center;
+  font-size: 1.5vw;
 }
 
 button {
@@ -12,17 +34,50 @@ button {
   width: 12%;
   margin: 0;
   background-color: transparent;
+  padding: 0;
+  text-align: left;
 }
 
 input {
   border: none;
-  border-bottom: 2px solid black;
+  border-bottom: 0.15vw solid black;
   outline: none;
-  font-size: 2vw;
+  font-size: 1.7vw;
   width: 87%;
   background-color: transparent;
 }
 
 form {
   height: auto;
+}
+
+@media (max-width: 600px) {
+
+.container-form-days {
+  flex-direction: column;
+}
+
+.container-form {
+  display: block;
+  width: 100%;
+
+}
+
+.container-days {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+button {
+  font-size: 4vw;
+  width: 5%;
+}
+
+input {
+  font-size: 4vw;
+  width: 95%;
+  text-align: left;
+}
+
 }

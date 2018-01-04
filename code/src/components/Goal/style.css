@@ -1,0 +1,47 @@
+/* .dayButton {
+  display: inline-block;
+  border-radius: 50%;
+  margin-left: 10px;
+  width: 15px;
+  height: 15px;
+  background-color: blue;
+} */
+
+.goals {
+  margin-bottom: 3vw;
+  font-size: 2vw;
+  display: flex;
+  align-items: center;
+}
+
+.goal-text {
+  display: inline-block;
+  width: 15vw;
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+
+.goals {
+  width: 100%;
+  background-color: blue;
+  position: relative;
+  height: 15vw;
+}
+
+.day-buttons {
+  width: 100%;
+  flex-direction: row;
+
+}
+
+.goal-text {
+  width: 100vw;
+  display: block;
+  background-color: red;
+  position: absolute;
+  top: 0;
+
+}
+
+}
