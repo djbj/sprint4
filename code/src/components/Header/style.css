@@ -9,7 +9,6 @@
 .header-container {
   font-family: Graphik, Helvetica, sans-serif;
   width: 100%;
-  background-color: lightgrey;
   font-size: 3.5vw;
   display: flex;
   justify-content: space-between;
