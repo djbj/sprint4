@@ -4,7 +4,7 @@
   margin-left: 1.5vw;
   width: 6vw;
   height: 6vw;
-  border: 0.15vw solid black;
+  border: 0.2vw solid black;
 }
 
 .dayButton1 {
@@ -17,7 +17,7 @@
   margin-left: 1.5vw;
   width: 6vw;
   height: 6vw;
-  border: 0.15vw solid black;
+  border: 0.2vw solid black;
   background-color: lightgrey;
 }
 
@@ -28,15 +28,16 @@
   background-position: center;
   display: inline-block;
   border-radius: 50%;
-  margin-left: 1.5vw;
+  margin-left: 1.2vw;
   width: 6vw;
   height: 6vw;
-  border: 0.15vw solid black;
+  border: 0.15vw solid #3a7d3a;
   background-color: #3a7d3a;
 }
 
 button {
   outline: none;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
