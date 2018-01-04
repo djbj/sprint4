@@ -24,23 +24,25 @@
 
 .goals {
   width: 100%;
-  background-color: blue;
   position: relative;
-  height: 15vw;
+  margin-top: 2vw;
+  height: 18vw;
+  display: flex;
+  justify-content: space-between;
 }
 
 .day-buttons {
-  width: 100%;
   flex-direction: row;
+  margin: 0;
+  align-self: flex-end;
 }
 
 .goal-text {
-  width: 100vw;
+  width: 80vw;
   display: block;
-  background-color: red;
   position: absolute;
-  top: 0;
   font-size: 4vw;
+  align-self: flex-start;
 }
 
 }
