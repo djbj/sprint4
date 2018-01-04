@@ -29,8 +29,8 @@
 .goals {
   width: 100%;
   position: relative;
-  margin-top: 2vw;
-  height: 18vw;
+  margin-top: 5vw;
+  height: 21vw;
   display: flex;
   justify-content: space-between;
 }
@@ -39,6 +39,16 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: absolute;
+  margin-top: -5px;
+  width: 100%;
+}
+
+.day {
+  font-size: 2vw;
+  width: 10vw;
+  text-align: center;
+  margin: 0;
 }
 
 .day-buttons {

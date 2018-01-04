@@ -11,7 +11,8 @@ body {
 .container-form {
   width: 16.8vw;
   height: 5vw;
-  margin-top: 5vw;
+  margin-top: 10vw;
+  margin-bottom: 3vw;
   display: inline-block;
   margin-left: -1.8vw;
 }
