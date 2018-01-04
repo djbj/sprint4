@@ -14,8 +14,8 @@ import "./style.css"
 // }
 class Goal extends React.Component {
 
-handleDayClick = (dayIndex) => {
-  console.log("dayClick", this.props.text, this.props.status, dayIndex)
+handleDayClick = (dayIndex, dayStatus) => {
+  console.log("dayClick", this.props.text, this.props.status, dayIndex, dayStatus)
 }
 
 render() {
@@ -28,7 +28,8 @@ render() {
           <Day
             key={uuid()}
             dayIndex={item.index}
-            onClick={() => this.handleDayClick(index)} />
+            dayStatus={item}
+            onClick={() => this.handleDayClick(index, item)} />
         </div>
       ))}
     </div>
