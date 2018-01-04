@@ -52,12 +52,11 @@ class TodoList extends React.Component {
   handleDayClick = (dayState, goalId, index) => {
     const newItems = this.state.goals.map(item => {
       if (item.id === goalId) {
-        // item.done = !item.done
         item.status[index] = item.status[index] + 1 // why ????
         if (item.status[index] === 3) {
           item.status[index] = 0
         }
-        console.log(item.status[index])
+        console.log("New status: ", item.status[index])
       }
       return item
     })
