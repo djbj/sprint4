@@ -16,6 +16,9 @@ class TodoList extends React.Component {
     if (alldata) { this.state = { goals: alldata } }
   }
 
+  // creating a function delete a goal getItem
+  
+
   handleNewGoal = newGoalText => {
     if (newGoalText === "") { return }
     const goal = { id: uuid(), text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0] }
