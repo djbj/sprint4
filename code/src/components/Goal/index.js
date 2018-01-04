@@ -14,8 +14,8 @@ import "./style.css"
 // }
 class Goal extends React.Component {
 
-handleDayClick = () => {
-  console.log("dayClick", this.props.text, this.props.status, this.props.dayIndex)
+handleDayClick = (dayIndex) => {
+  console.log("dayClick", this.props.text, this.props.status, dayIndex)
   console.log(this.props.status)
 }
 
@@ -24,12 +24,12 @@ render() {
     <div className="goals">
       <div className="goal-text">{this.props.text}</div>
 
-      {this.props.status.map(item => (
+      {this.props.status.map((item, index) => (
         <div className="day-buttons">
           <Day
             key={uuid()}
             dayIndex={item.index}
-            onClick={() => this.handleDayClick()} />
+            onClick={() => this.handleDayClick(index)} />
         </div>
       ))}
     </div>
