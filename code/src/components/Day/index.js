@@ -16,7 +16,7 @@ class Day extends React.Component {
     return (
       <button
         className={this.getClassName(this.props.dayStatus)}
-        onClick={this.props.onClick} />
+        onClick={this.props.onButtonPress} />
     )
   }
 }

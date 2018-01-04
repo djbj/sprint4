@@ -8,11 +8,7 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      goals: [
-        // { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
-        // { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
-        // { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
-      ]
+      goals: []
     }
 
     // getting data from the local storage
@@ -32,6 +28,10 @@ class TodoList extends React.Component {
     })
   }
 
+  handleDayClick = (dayState, goalId, index) => {
+    console.log(dayState, goalId, index)
+  }
+
   render() {
     return (
       <div>
@@ -41,12 +41,17 @@ class TodoList extends React.Component {
             key={item.id}
             id={item.id}
             text={item.text}
-            status={item.status} />
+            status={item.status}
+            onButtonPress2={this.handleDayClick}
+/>
         ))}
       </div>
     )
   }
-
+  // Old status beginning
+  // { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
+  // { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
+  // { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
 }
 
 export default TodoList
