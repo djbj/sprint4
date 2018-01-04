@@ -3,15 +3,6 @@ import uuid from "uuid/v4"
 import Day from "../Day"
 import "./style.css"
 
-// function Day(props) {
-//   return (
-//     <button
-//       className="dayButton"
-//       onClick={props.onClick}>
-//       {props.key}
-//     </button>
-//   )
-// }
 class Goal extends React.Component {
 
 handleDayClick = (dayIndex, dayStatus) => {
