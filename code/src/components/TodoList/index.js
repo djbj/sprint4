@@ -24,19 +24,6 @@ class TodoList extends React.Component {
     })
   }
 
-  handleTodoDoneChange = id => {
-    const newGoals = this.state.goals.map(item => {
-      if (item.id === id) {
-        // item.done = !item.done
-      }
-      return item
-    })
-
-    this.setState({
-      goals: newGoals
-    })
-  }
-
   render() {
     return (
       <div>
