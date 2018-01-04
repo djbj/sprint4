@@ -19,7 +19,19 @@ class TodoList extends React.Component {
   }
 
   // creating a function delete a goal getItem
-  
+  handleRemove = id => {
+    const removeGoal =  this.state.goals.filter(remove => {
+      if (remove.id === id) {
+        remove.id = !remove.id
+      }
+       return remove.id
+     })
+
+     this.setState({
+       goals: removeGoal
+     })
+
+  }
 
   handleNewGoal = newGoalText => {
     if (newGoalText === "") { return }
@@ -48,6 +60,7 @@ class TodoList extends React.Component {
             text={item.text}
             status={item.status}
             onButtonPress2={this.handleDayClick}
+            delete={this.handleRemove}
 />
         ))}
       </div>
