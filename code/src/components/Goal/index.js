@@ -6,6 +6,9 @@ import "./style.css"
 class Goal extends React.Component {
 
 render() {
+  if (!this.props.isVisible) {
+    return <div />
+  }
   return (
     <div className="goals">
       <div className="goal-text">{this.props.text}</div>
@@ -18,7 +21,6 @@ render() {
         <div className="day"><p>F</p></div>
         <div className="day"><p>S</p></div>
         <div className="day"><p>S</p></div>
-        {/* <div className="del"><p>D</p></div> */}
       </div>
 
       {this.props.status.map((item, index) => (
@@ -31,7 +33,12 @@ render() {
           />
         </div>
       ))}
-      {/* <button>DEL</button> */}
+
+      <button
+        className="delete-btn"
+        onClick={() => (this.props.delete(this.props.id))}>
+        delete
+      </button>
     </div>
 
   )

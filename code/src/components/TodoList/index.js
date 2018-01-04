@@ -12,7 +12,8 @@ class TodoList extends React.Component {
         {
           id: uuid(),
           text: "Yoga",
-          status: [1, 0, 2, 0, 0, 2, 1]
+          status: [1, 0, 2, 0, 0, 2, 1],
+          visible: true
         }
       ]
     }
@@ -23,23 +24,23 @@ class TodoList extends React.Component {
   }
 
   // creating a function delete a goal getItem
-  handleRemove = id => {
-    const removeGoal =  this.state.goals.filter(remove => {
-      if (remove.id === id) {
-        remove.id = !remove.id
-      }
-       return remove.id
-     })
-
-     this.setState({
-       goals: removeGoal
-     })
-
-  }
+  // handleRemove = id => {
+  //   const removeGoal =  this.state.goals.filter(remove => {
+  //     if (remove.id === id) {
+  //       remove.id = !remove.id
+  //     }
+  //      return remove.id
+  //    })
+  //
+  //    this.setState({
+  //      goals: removeGoal
+  //    })
+  //
+  // }
 
   handleNewGoal = newGoalText => {
     if (newGoalText === "") { return }
-    const goal = { id: uuid(), text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0] }
+    const goal = { id: uuid(), text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0], visible: true }
 
     // saving data in a local storage
     const data = [goal, ...this.state.goals]
@@ -67,6 +68,22 @@ class TodoList extends React.Component {
 
   }
 
+  handleDeleteClick = goalId => {
+    const newItems = this.state.goals.map(item => {
+      if (item.id === goalId) {
+        if (item.visible === true) {
+          item.visible = false
+          console.log("Visibility changed to false")
+        }
+      }
+      return item
+    })
+
+    this.setState({
+      goals: newItems
+    })
+  }
+
   render() {
     return (
       <div>
@@ -78,10 +95,10 @@ class TodoList extends React.Component {
             text={item.text}
             status={item.status}
             onButtonPress2={this.handleDayClick}
-            // delete={this.handleRemove}
+            isVisible={item.visible}
+            delete={this.handleDeleteClick}
           />
         ))}
-
       </div>
     )
   }
