@@ -9,7 +9,11 @@ class TodoList extends React.Component {
     super(props)
     this.state = {
       goals: [
-        { id: uuid(), text: "Yoga", status: [1, 0, 2, 0, 0, 2, 1] }
+        {
+          id: uuid(),
+          text: "Yoga",
+          status: [1, 0, 2, 0, 0, 2, 1]
+        }
       ]
     }
 
@@ -46,10 +50,22 @@ class TodoList extends React.Component {
   }
 
   handleDayClick = (dayState, goalId, index) => {
-    console.log(dayState, goalId, index)
-    this.setState({
-
+    const newItems = this.state.goals.map(item => {
+      if (item.id === goalId) {
+        // item.done = !item.done
+        item.status[index] = item.status[index] + 1 // why ????
+        if (item.status[index] === 3) {
+          item.status[index] = 0
+        }
+        console.log(item.status[index])
+      }
+      return item
     })
+
+    this.setState({
+      goals: newItems
+    })
+
   }
 
   render() {
