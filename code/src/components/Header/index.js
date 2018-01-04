@@ -4,14 +4,15 @@ import moment from "moment"
 
 import "./style.css"
 
-const day = moment().format("MMM Do YY")
+const day = moment().format("W MMM Do YY")
+const week = moment().format("W")
 
 class Header extends React.Component {
 
   render() {
     return (
       <div className="header-container">
-        <div><p>Goals – {day}</p></div>
+        <p className="header-week">Goals – Week {week}</p><p className="header-day">{day}</p>
       </div>
     )
   }

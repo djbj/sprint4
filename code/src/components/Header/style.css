@@ -11,7 +11,20 @@
   width: 100%;
   background-color: lightgrey;
   font-size: 3.5vw;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+}
 
+.header-day {
+  font-size: 1.5vw;
+  display: inline-block;
+}
+
+.header-week {
+  display: inline-block;
 }
 
 @media (max-width: 600px) {
