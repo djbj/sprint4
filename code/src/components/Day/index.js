@@ -2,13 +2,16 @@ import React from "react"
 import "./style.css"
 
 class Day extends React.Component {
+  getClassName = (day) => {
+    if(day === 1) {
+      return "dayButton"
+    }
+  }
+
   render() {
-    // console.log(this.props.dayStatus)
     return (
-      // console.log(this.props.dayStatus)
-      // console.log("hello")
       <button
-        className="dayButton"
+        className={this.getClassName(this.props.dayStatus)}
         onClick={this.props.onClick}
       />
     )
