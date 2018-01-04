@@ -61,24 +61,28 @@ form {
 .container-form {
   display: block;
   width: 100%;
-
 }
 
 .container-days {
   display: flex;
   flex-direction: row;
   width: 100%;
+  margin-top: 5vw;
 }
 
+.day {
+    font-size: 3vw;
+}
 button {
-  font-size: 4vw;
+  font-size: 5vw;
   width: 5%;
 }
 
 input {
-  font-size: 4vw;
+  font-size: 5vw;
   width: 95%;
   text-align: left;
+  border-bottom: 0.4vw solid black;
 }
 
 }

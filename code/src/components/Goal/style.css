@@ -32,7 +32,6 @@
 .day-buttons {
   width: 100%;
   flex-direction: row;
-
 }
 
 .goal-text {
@@ -41,7 +40,7 @@
   background-color: red;
   position: absolute;
   top: 0;
-
+  font-size: 4vw;
 }
 
 }
