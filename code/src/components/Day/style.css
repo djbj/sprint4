@@ -9,7 +9,7 @@
 
 .dayButton1 {
   background-image: url("/images/cross.png");
-  background-size: 3.2vw 3.2vw;
+  background-size: 2.5vw 2.5vw;
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
@@ -23,7 +23,7 @@
 
 .dayButton2 {
   background-image: url("/images/check.png");
-  background-size: 4.4vw 4.4vw;
+  background-size: 3.5vw 3.5vw;
   background-repeat: no-repeat;
   background-position: center;
   display: inline-block;
@@ -31,7 +31,7 @@
   margin-left: 1.2vw;
   width: 6vw;
   height: 6vw;
-  border: 0.15vw solid #3a7d3a;
+  border: 0.2vw solid black;
   background-color: #3a7d3a;
 }
 
