@@ -8,7 +8,9 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      goals: []
+      goals: [
+        { id: uuid(), text: "Yoga", status: [1, 0, 2, 0, 0, 2, 1] }
+      ]
     }
 
     // getting data from the local storage
