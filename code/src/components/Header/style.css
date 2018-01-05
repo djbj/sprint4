@@ -18,14 +18,15 @@ img {
 }
 
 .date-heading-container {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: baseline;
 }
 
 .header-day {
   font-size: 1.5vw;
   display: inline-block;
-  align-self: flex-end;
   margin-top: 8px;
 }
 
