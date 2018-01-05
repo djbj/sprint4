@@ -2,25 +2,24 @@
 * {
   margin: 0;
 }
+
 .header-container {
   font-family: Graphik, Helvetica, sans-serif;
   width: 100%;
   font-size: 3.5vw;
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: baseline;
 }
 
 img {
   width: 60px;
   height: 60px;
-  margin-left: -10px;
+  margin-left: -5px;
 }
 
 .date-heading-container {
   flex-direction: row;
+  justify-content: space-between;
 }
 
 .header-day {
