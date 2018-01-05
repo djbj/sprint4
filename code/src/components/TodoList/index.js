@@ -8,12 +8,26 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      goals: []
+      goals: [],
+      totalScore: 0
     }
 
     // getting data from the local storage
     const alldata = JSON.parse(localStorage.getItem("dataItem"))
-    if (alldata) { this.state = { goals: alldata } }
+    if (alldata) { this.state = { goals: alldata, totalScore: this.state.totalScore } }
+    console.log("TotalScore is onload: " + this.state.totalScore)
+  }
+
+  checkIfGoalisComplete = goalId => {
+    const newItems = this.state.goals.forEach(item => {
+      if (item.id === goalId) {
+        console.log("work on this goal" + item.status)
+        return item.status
+      }
+    })
+    // const isComplete = newItems.forEach(() => { console.log("prufa") })
+
+    console.log("NeweItems: " + newItems)
   }
 
   handleNewGoal = newGoalText => {
@@ -40,22 +54,30 @@ class TodoList extends React.Component {
           const GoalClick2 = new Audio("/sound/GoalClick2.mp3")
           GoalClick2.play()
         } else if (item.status[index] === 2) {
+          this.setState({
+            totalScore: this.state.totalScore + 1
+          })
+          console.log("TotalScore" + this.state.totalScore)
           const GoalClick = new Audio("/sound/GoalClick.mp3")
           GoalClick.play()
         } else if (item.status[index] === 3) {
+          this.setState({
+            totalScore: this.state.totalScore - 1
+          })
           const GoalDelete = new Audio("/sound/GoalDelete.mp3")
           GoalDelete.play()
           item.status[index] = 0
         }
-        console.log("New status: ", item.status[index])
       }
+      console.log("TotalScore" + this.state.totalScore)
       return item
     })
+
+    this.checkIfGoalisComplete(goalId)
 
     const data = [newItems, ...this.state.goals]
     localStorage.setItem("dataItem", JSON.stringify(data))
 
-    console.log(newItems)
     this.setState({
       goals: newItems
     })
@@ -66,10 +88,8 @@ class TodoList extends React.Component {
       if (item.id === goalId) {
         if (item.visible === true) {
           item.visible = false
-          console.log("Visibility of " + goalText + " changed to false")
         }
       }
-      console.log("im returning")
       return item
     })
 
@@ -125,6 +145,6 @@ export default TodoList
 // }
 
 // Old status beginning
-// { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
-// { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
+// { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1], visible },
+// { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0], visible },
 // { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
