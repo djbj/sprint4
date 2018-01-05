@@ -2,6 +2,7 @@ import React from "react"
 import uuid from "uuid/v4"
 import Form from "../Form"
 import Goal from "../Goal"
+import "./style.css"
 
 class TodoList extends React.Component {
 
@@ -115,6 +116,7 @@ class TodoList extends React.Component {
         <audio autoplay source="/sound/GoalClick.mp3"></audio>
 
         <Form onNewGoal={this.handleNewGoal} />
+
         {this.state.goals.map(item => (
           <Goal
             key={item.id}
@@ -126,6 +128,8 @@ class TodoList extends React.Component {
             delete={this.handleDeleteClick}
           />
         ))}
+
+        <div className="score"><p>Score: {this.state.totalScore}</p></div>
       </div>
     )
   }
