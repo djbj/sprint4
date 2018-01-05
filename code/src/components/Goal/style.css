@@ -48,6 +48,7 @@
   height: 21vw;
   display: flex;
   justify-content: space-between;
+  background-color: red;
 }
 
 .container-days-mobile {
@@ -78,19 +79,15 @@
   position: absolute;
   font-size: 4vw;
   align-self: flex-start;
+  margin-left: 4vw;
 }
 
 .delete-btn {
-  position: absolute;
-  left: -2.2vw;
+  top: 0.6vw;
   width: 3vw;
   height: 3vw;
-  border-radius: 50%;
-  background-image: url("/images/minus.png");
   background-size: 2.5vw 2.5vw;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #868585;
+  left: 0;
 }
 
 }
