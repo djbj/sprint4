@@ -31,6 +31,8 @@ class TodoList extends React.Component {
     console.log("NeweItems: " + newItems)
   }
 
+  mario = false;
+
   handleNewGoal = newGoalText => {
     if (newGoalText === "") { return }
     const goal = { id: uuid(), text: newGoalText, status: [0, 0, 0, 0, 0, 0, 0], visible: true }
@@ -62,6 +64,9 @@ class TodoList extends React.Component {
             if (item.status[i] === 2) {
               isGoalComplete += 1
               if(isGoalComplete === 7) {
+                console.log(this.mario)
+                this.mario = true
+                console.log(this.mario)
                 const GoalDelete = new Audio("/sound/GoalAllComplete.mp3")
                 GoalDelete.play()
                 console.log("I Found " + item.status[i])
@@ -124,6 +129,16 @@ class TodoList extends React.Component {
     })
   }
 
+  getMario = () => {
+    if (this.mario) {
+      return "marioVisible"
+    } else if (!this.mario) {
+      return "marioHidden"
+    }
+
+  }
+
+
   render() {
     return (
       <div>
@@ -142,9 +157,8 @@ class TodoList extends React.Component {
             delete={this.handleDeleteClick}
           />
         ))}
-
-        <div className="score"><p>Score: {this.state.totalScore}</p></div>
-      </div>
+        <div className="score"><img src="/images/mario.gif" className={this.getMario()}/><p>Score: {this.state.totalScore}</p> </div>
+</div>
     )
   }
 }

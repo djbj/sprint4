@@ -1,5 +1,18 @@
 .score {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
   font-family: Graphik, Helvetica, sans-serif;
   text-align: right;
   margin-top: 1.5vw;
+}
+
+img.marioVisible {
+  /* visibility: hidden; */
+  display:inline-block;
+  width: 4%;
+  height: 4%
+}
+img.marioHidden {
+  display: none;
 }
