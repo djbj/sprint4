@@ -24,6 +24,18 @@
   display: none;
 }
 
+.delete-btn {
+  position: absolute;
+  text-align: left;
+  margin-left: -2vw;
+  width:2vw;
+  height: 2vw;
+  border-radius: 50%;
+  background-color: red;
+  border: 2px solid black;
+
+}
+
 @media (max-width: 600px) {
 
 .goals {
