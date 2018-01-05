@@ -10,6 +10,7 @@
 .goals {
   margin-bottom: 3vw;
   font-size: 2vw;
+  width: 100%;
   display: flex;
   align-items: center;
   position: relative;
@@ -20,6 +21,11 @@
   display: inline-block;
   width: 15vw;
   text-align: left;
+}
+
+.day-buttons {
+  display: flex;
+  flex-direction: row;
 }
 
 .container-days-mobile {
@@ -37,6 +43,12 @@
   background-repeat: no-repeat;
   background-position: center;
   background-color: #524f4f;
+}
+
+.footer-container {
+  width: 100%;
+  position: absolute;
+
 }
 
 @media (max-width: 600px) {

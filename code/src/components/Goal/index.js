@@ -39,6 +39,7 @@ class Goal extends React.Component {
           className="delete-btn"
           onClick={() => (this.props.delete(this.props.id))}>
         </button>
+
       </div>
     )
   }

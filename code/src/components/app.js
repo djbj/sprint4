@@ -7,6 +7,7 @@ import Form from "./Form"
 import Header from "./Header"
 // import Page from "Page"
 import TodoList from "./TodoList"
+import Footer from "./footer"
 
 class App extends React.Component {
 
@@ -15,6 +16,7 @@ class App extends React.Component {
       <div>
         <Header />
         <TodoList />
+        <Footer />
       </div>
     )
   }
