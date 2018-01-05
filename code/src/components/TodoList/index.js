@@ -24,6 +24,9 @@ class TodoList extends React.Component {
     const data = [goal, ...this.state.goals]
     localStorage.setItem("dataItem", JSON.stringify(data))
 
+    const GoalClick = new Audio("/sound/GoalClick7.mp3")
+    GoalClick.play()
+
     this.setState({
       goals: data
     })
@@ -32,8 +35,16 @@ class TodoList extends React.Component {
   handleDayClick = (dayState, goalId, index) => {
     const newItems = this.state.goals.map(item => {
       if (item.id === goalId) {
-        item.status[index] += 1 // why ????
-        if (item.status[index] === 3) {
+        item.status[index] += 1
+        if (item.status[index] === 1) {
+          const GoalClick2 = new Audio("/sound/GoalClick2.mp3")
+          GoalClick2.play()
+        } else if (item.status[index] === 2) {
+          const GoalClick = new Audio("/sound/GoalClick.mp3")
+          GoalClick.play()
+        } else if (item.status[index] === 3) {
+          const GoalDelete = new Audio("/sound/GoalDelete.mp3")
+          GoalDelete.play()
           item.status[index] = 0
         }
         console.log("New status: ", item.status[index])
@@ -62,6 +73,9 @@ class TodoList extends React.Component {
       return item
     })
 
+    const GoalDelete = new Audio("/sound/GoalDelete.mp3")
+    GoalDelete.play()
+
     const data = [newItems, ...this.state.goals]
     localStorage.setItem("dataItem", JSON.stringify(data))
 
@@ -69,15 +83,13 @@ class TodoList extends React.Component {
     this.setState({
       goals: newItems
     })
-
-    // this.setState({
-    //   goals: newItems
-    // })
   }
 
   render() {
     return (
       <div>
+        <audio autoplay source="/sound/GoalClick.mp3"></audio>
+
         <Form onNewGoal={this.handleNewGoal} />
         {this.state.goals.map(item => (
           <Goal

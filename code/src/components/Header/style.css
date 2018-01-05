@@ -12,9 +12,9 @@
 }
 
 img {
-  width: 60px;
-  height: 60px;
-  margin-left: -5px;
+  width: 90px;
+  height: 90px;
+  margin-left: -17px;
 }
 
 .date-heading-container {
@@ -27,12 +27,12 @@ img {
 .header-day {
   font-size: 1.5vw;
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 35px;
 }
 
 .header-week {
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 35px;
 }
 
 @media (max-width: 600px) {

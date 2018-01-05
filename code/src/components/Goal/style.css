@@ -20,6 +20,7 @@
   display: inline-block;
   width: 15vw;
   text-align: left;
+  margin-left: 2vw;
 }
 
 .container-days-mobile {
@@ -28,16 +29,15 @@
 
 .delete-btn {
   position: absolute;
-  left: -2.2vw;
+  left: 0;
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 50%;
-  /*border: 0.15vw solid black;*/
-  background-image: url("/images/minus.png");
+  background-image: url("/images/minus_grey.png");
   background-size: 1.3vw 1.3vw;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #868585;
+  background-color: #524f4f;
 }
 
 @media (max-width: 600px) {
@@ -79,6 +79,15 @@
   position: absolute;
   font-size: 4vw;
   align-self: flex-start;
+  margin-left: 4vw;
+}
+
+.delete-btn {
+  top: 0.6vw;
+  width: 3vw;
+  height: 3vw;
+  background-size: 2.5vw 2.5vw;
+  left: 0;
 }
 
 }
