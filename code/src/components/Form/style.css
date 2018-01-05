@@ -11,7 +11,7 @@ body {
 .container-form {
   width: 16.8vw;
   height: 5vw;
-  margin-top: 10vw;
+  margin-top: 8vw;
   margin-bottom: 0vw;
   display: inline-block;
   margin-left: -1.8vw;
@@ -57,6 +57,7 @@ form {
 
 .container-form-days {
   flex-direction: column;
+  position: relative;
 }
 
 .container-form {
@@ -79,9 +80,16 @@ button {
 
 input {
   font-size: 5vw;
-  width: 95%;
+  width: 100%;
   text-align: left;
   border-bottom: 0.4vw solid black;
+  position: absolute;
+  left: 0vw;
+}
+
+.add-goal {
+  position: absolute;
+  left: -4vw;
 }
 
 }

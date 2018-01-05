@@ -21,6 +21,7 @@
   display: inline-block;
   width: 15vw;
   text-align: left;
+  margin-left: 2vw;
 }
 
 .day-buttons {
@@ -34,7 +35,7 @@
 
 .delete-btn {
   position: absolute;
-  left: -2.2vw;
+  left: 0;
   width: 1.5vw;
   height: 1.5vw;
   border-radius: 50%;
@@ -60,7 +61,6 @@
   height: 21vw;
   display: flex;
   justify-content: space-between;
-  background-color: red;
 }
 
 .container-days-mobile {

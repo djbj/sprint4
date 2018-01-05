@@ -2,18 +2,37 @@ import React from "react"
 import uuid from "uuid/v4"
 import Form from "../Form"
 import Goal from "../Goal"
+import "./style.css"
 
 class TodoList extends React.Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      goals: []
+      goals: [],
+      totalScore: 0
     }
 
     // getting data from the local storage
     const alldata = JSON.parse(localStorage.getItem("dataItem"))
     if (alldata) { this.state = { goals: alldata } }
+    console.log("TotalScore is onload: " + this.state.totalScore)
+  }
+
+  checkIfGoalisComplete = goalId => {
+
+    const newItems = this.state.goals.forEach(item => {
+      let prufa = "hello"
+      if (item.id === goalId) {
+        console.log("work on this goal" + item.status)
+        console.log("this.state.goals is" + this.state.goals[0].text)
+      } else {
+        console.log("do not work here" + item.status)
+      }
+    })
+
+    console.log(this.state.goals)
+
   }
 
   handleNewGoal = newGoalText => {
@@ -40,22 +59,30 @@ class TodoList extends React.Component {
           const GoalClick2 = new Audio("/sound/GoalClick2.mp3")
           GoalClick2.play()
         } else if (item.status[index] === 2) {
+          this.setState({
+            totalScore: this.state.totalScore + 1
+          })
+          console.log("TotalScore" + this.state.totalScore)
           const GoalClick = new Audio("/sound/GoalClick.mp3")
           GoalClick.play()
         } else if (item.status[index] === 3) {
+          this.setState({
+            totalScore: this.state.totalScore - 1
+          })
           const GoalDelete = new Audio("/sound/GoalDelete.mp3")
           GoalDelete.play()
           item.status[index] = 0
         }
-        console.log("New status: ", item.status[index])
       }
+      console.log("TotalScore" + this.state.totalScore)
       return item
     })
+
+    this.checkIfGoalisComplete(goalId)
 
     const data = [newItems, ...this.state.goals]
     localStorage.setItem("dataItem", JSON.stringify(data))
 
-    console.log(newItems)
     this.setState({
       goals: newItems
     })
@@ -66,10 +93,8 @@ class TodoList extends React.Component {
       if (item.id === goalId) {
         if (item.visible === true) {
           item.visible = false
-          console.log("Visibility of " + goalText + " changed to false")
         }
       }
-      console.log("im returning")
       return item
     })
 
@@ -91,6 +116,7 @@ class TodoList extends React.Component {
         <audio autoplay source="/sound/GoalClick.mp3"></audio>
 
         <Form onNewGoal={this.handleNewGoal} />
+
         {this.state.goals.map(item => (
           <Goal
             key={item.id}
@@ -102,6 +128,8 @@ class TodoList extends React.Component {
             delete={this.handleDeleteClick}
           />
         ))}
+
+        <div className="score"><p>Score: {this.state.totalScore}</p></div>
       </div>
     )
   }
@@ -125,6 +153,6 @@ export default TodoList
 // }
 
 // Old status beginning
-// { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
-// { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
+// { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1], visible },
+// { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0], visible },
 // { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
