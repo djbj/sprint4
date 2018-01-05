@@ -40,7 +40,7 @@ render() {
     <div className="container-form-days">
       <div className="container-form">
         <form onSubmit={this.handleSubmit}>
-          <button>+</button>
+          <button className="add-goal">+</button>
           <input
             type="text"
             name="text"
