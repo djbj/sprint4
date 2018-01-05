@@ -2,9 +2,16 @@
   display: flex;
   justify-content: center;
   width: 68vw;
+
 }
 
 #footer-svg {
   width: 70px;
   height: auto;
+}
+
+@media (max-width: 600px) {
+  .footer-container {
+    display: none;
+}
 }
