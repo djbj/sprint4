@@ -12,6 +12,7 @@
   font-size: 2vw;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .goal-text {
@@ -26,14 +27,16 @@
 
 .delete-btn {
   position: absolute;
-  text-align: left;
-  margin-left: -2vw;
-  width:2vw;
-  height: 2vw;
+  left: -2.2vw;
+  width: 1.5vw;
+  height: 1.5vw;
   border-radius: 50%;
-  background-color: red;
-  border: 2px solid black;
-
+  /*border: 0.15vw solid black;*/
+  background-image: url("/images/minus.png");
+  background-size: 1.3vw 1.3vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #868585;
 }
 
 @media (max-width: 600px) {
