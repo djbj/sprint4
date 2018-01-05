@@ -55,12 +55,30 @@ class TodoList extends React.Component {
           const GoalClick2 = new Audio("/sound/GoalClick2.mp3")
           GoalClick2.play()
         } else if (item.status[index] === 2) {
+          // check here if all items in the arrey equals 2
+          let isGoalComplete = 0
+          for (var i = 0; i < item.status.length; i++) {
+            // console.log("in loop " + item.status[i])
+            if (item.status[i] === 2) {
+              isGoalComplete += 1
+              if(isGoalComplete === 7) {
+                const GoalDelete = new Audio("/sound/GoalAllComplete.mp3")
+                GoalDelete.play()
+                console.log("I Found " + item.status[i])
+              } else if (isGoalComplete != 7) {
+                const GoalDelete = new Audio("/sound/GoalClick.mp3")
+                GoalDelete.play()
+              }
+
+            }
+          }
+
           this.setState({
             totalScore: this.state.totalScore + 1
           })
           console.log("TotalScore" + this.state.totalScore)
-          const GoalClick = new Audio("/sound/GoalClick.mp3")
-          GoalClick.play()
+          // const GoalClick = new Audio("/sound/GoalClick.mp3")
+          // GoalClick.play()
         } else if (item.status[index] === 3) {
           this.setState({
             totalScore: this.state.totalScore - 1
