@@ -12,7 +12,7 @@ class Header extends React.Component {
   render() {
     return (
       <div className="header-container">
-        <img src="/images/logo.svg" />
+        <img src="/images/logo_2.svg" alt="habit logo"/>
         <div className="date-heading-container">
           <p className="header-week">Goals – Week {week}</p><p className="header-day">{day}</p>
         </div>
