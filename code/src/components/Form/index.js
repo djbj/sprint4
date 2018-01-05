@@ -10,6 +10,17 @@ class Form extends React.Component {
     }
   }
 
+// jimmas changes
+  // handleEdit = event => {
+  //   // const edit = event.target.value
+  //   if (!edit || edit === "" || edit === " ") {
+  //     return false
+  //   }
+  //   this.setState({
+  //     text: edit
+  //   })
+  // }
+
 handleChange = event => {
   this.setState({
     text: event.target.value
@@ -48,6 +59,7 @@ render() {
             value={this.state.text}
             onChange={this.handleChange} />
         </form>
+        {/* <button onClick={this.handleEdit}>edit</button> */}
       </div>
 
       <div className="container-days">
