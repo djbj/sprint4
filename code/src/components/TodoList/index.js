@@ -110,7 +110,10 @@ class TodoList extends React.Component {
       <div>
         <audio autoplay source="/sound/GoalClick.mp3"></audio>
 
+        <p>Score: {this.state.totalScore}</p>
+
         <Form onNewGoal={this.handleNewGoal} />
+
         {this.state.goals.map(item => (
           <Goal
             key={item.id}
