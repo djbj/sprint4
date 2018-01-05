@@ -8,35 +8,13 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      goals: [
-        {
-          id: uuid(),
-          text: "Yoga",
-          status: [1, 0, 2, 0, 0, 2, 1],
-          visible: true
-        }
-      ]
+      goals: []
     }
 
     // getting data from the local storage
     const alldata = JSON.parse(localStorage.getItem("dataItem"))
     if (alldata) { this.state = { goals: alldata } }
   }
-
-  // creating a function delete a goal getItem
-  // handleRemove = id => {
-  //   const removeGoal =  this.state.goals.filter(remove => {
-  //     if (remove.id === id) {
-  //       remove.id = !remove.id
-  //     }
-  //      return remove.id
-  //    })
-  //
-  //    this.setState({
-  //      goals: removeGoal
-  //    })
-  //
-  // }
 
   handleNewGoal = newGoalText => {
     if (newGoalText === "") { return }
@@ -45,6 +23,7 @@ class TodoList extends React.Component {
     // saving data in a local storage
     const data = [goal, ...this.state.goals]
     localStorage.setItem("dataItem", JSON.stringify(data))
+
     this.setState({
       goals: data
     })
@@ -53,7 +32,7 @@ class TodoList extends React.Component {
   handleDayClick = (dayState, goalId, index) => {
     const newItems = this.state.goals.map(item => {
       if (item.id === goalId) {
-        item.status[index] = item.status[index] + 1 // why ????
+        item.status[index] += 1 // why ????
         if (item.status[index] === 3) {
           item.status[index] = 0
         }
@@ -62,26 +41,38 @@ class TodoList extends React.Component {
       return item
     })
 
+    const data = [newItems, ...this.state.goals]
+    localStorage.setItem("dataItem", JSON.stringify(data))
+
+    console.log(newItems)
     this.setState({
       goals: newItems
     })
-
   }
 
-  handleDeleteClick = goalId => {
+  handleDeleteClick = (goalId, goalText) => {
     const newItems = this.state.goals.map(item => {
       if (item.id === goalId) {
         if (item.visible === true) {
           item.visible = false
-          console.log("Visibility changed to false")
+          console.log("Visibility of " + goalText + " changed to false")
         }
       }
+      console.log("im returning")
       return item
     })
 
+    const data = [newItems, ...this.state.goals]
+    localStorage.setItem("dataItem", JSON.stringify(data))
+
+    console.log(newItems)
     this.setState({
       goals: newItems
     })
+
+    // this.setState({
+    //   goals: newItems
+    // })
   }
 
   render() {
@@ -102,10 +93,26 @@ class TodoList extends React.Component {
       </div>
     )
   }
-  // Old status beginning
-  // { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
-  // { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
-  // { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }
 }
 
 export default TodoList
+
+// creating a function delete a goal getItem
+// handleRemove = id => {
+//   const removeGoal =  this.state.goals.filter(remove => {
+//     if (remove.id === id) {
+//       remove.id = !remove.id
+//     }
+//      return remove.id
+//    })
+//
+//    this.setState({
+//      goals: removeGoal
+//    })
+//
+// }
+
+// Old status beginning
+// { id: uuid(), text: "Yoga", status: [1 ,0,2,0,0,2,1] },
+// { id: uuid(), text: "Jogging", status: [1,2,0,0,1,2,0] },
+// { id: uuid(), text: "Feeding the cat", status: [0,0,0,0,0,0,0] }

@@ -36,7 +36,7 @@ render() {
 
       <button
         className="delete-btn"
-        onClick={() => (this.props.delete(this.props.id))}>
+        onClick={() => (this.props.delete(this.props.id, this.props.text))}>
         delete
       </button>
     </div>
