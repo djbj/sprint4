@@ -11,6 +11,12 @@ render() {
   }
   return (
     <div className="goals">
+      <button
+        className="delete-btn"
+        onClick={() => (this.props.delete(this.props.id))}>
+        –
+      </button>
+
       <div className="goal-text">{this.props.text}</div>
 
       <div className="container-days-mobile">
@@ -33,12 +39,6 @@ render() {
           />
         </div>
       ))}
-
-      <button
-        className="delete-btn"
-        onClick={() => (this.props.delete(this.props.id))}>
-        delete
-      </button>
     </div>
 
   )
