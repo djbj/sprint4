@@ -14,20 +14,24 @@ class TodoList extends React.Component {
 
     // getting data from the local storage
     const alldata = JSON.parse(localStorage.getItem("dataItem"))
-    if (alldata) { this.state = { goals: alldata, totalScore: this.state.totalScore } }
+    if (alldata) { this.state = { goals: alldata } }
     console.log("TotalScore is onload: " + this.state.totalScore)
   }
 
   checkIfGoalisComplete = goalId => {
+
     const newItems = this.state.goals.forEach(item => {
+      let prufa = "hello"
       if (item.id === goalId) {
         console.log("work on this goal" + item.status)
-        return item.status
+        console.log("this.state.goals is" + this.state.goals[0].text)
+      } else {
+        console.log("do not work here" + item.status)
       }
     })
-    // const isComplete = newItems.forEach(() => { console.log("prufa") })
 
-    console.log("NeweItems: " + newItems)
+    console.log(this.state.goals)
+
   }
 
   handleNewGoal = newGoalText => {
